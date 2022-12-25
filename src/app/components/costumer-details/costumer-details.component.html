@@ -1,0 +1,36 @@
+<!-- <div class="card" style="width: 18rem">
+  <div class="card-header">{{ costumer.firstN }} {{ costumer.lastN }}</div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ costumer.email }}</li>
+    <li class="list-group-item">{{ costumer.phone }}</li>
+    <li class="list-group-item">{{ costumer.email }}</li>
+  </ul>
+</div>
+<h1>costumer id is {{ costumerId }}</h1> -->
+<section class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <span>
+        <h2>{{ costumer.firstN }} {{ costumer.lastN }}</h2>
+      </span>
+    </div>
+    <div class="card-body">
+      <span>
+        <img
+          src="https://source.unsplash.com//345x225"
+          width="100%"
+          alt="Image"
+        />
+      </span>
+      <span>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">{{ costumer.email }}</li>
+          <li class="list-group-item">{{ costumer.phone }}</li>
+          <li class="list-group-item">{{ costumer.email }}</li>
+        </ul>
+        <a class="btn btn-color mt-3 p-2 " routerLink="/costumers">Go Back</a>
+      </span>
+    </div>
+  </div>
+</section>
+<!-- Developed by Tairocruiz -->

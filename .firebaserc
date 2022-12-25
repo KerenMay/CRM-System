@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crm261122": {
+      "hosting": {
+        "crm": [
+          "crm261122"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crm261122"
+  }
+}

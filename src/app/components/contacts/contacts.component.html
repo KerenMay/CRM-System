@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="col-11 m-5 mb-0">
+    <div class="input-group input-group-lg">
+      <span class="input-group-text" id="inputGroup-sizing-lg"> Search</span>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-lg"
+        [(ngModel)]="filteredContactString"
+        placeholder=" By name"
+      />
+    </div>
+  </div>
+  <ng-container
+    *ngIf="
+      contacts | contactFilter : 'name' : filteredContactString as contacts
+    "
+  >
+    <div class="main">
+      <div class="container" *ngFor="let contact of contacts">
+        <img
+          class="profile-img"
+          src="https://source.unsplash.com/random/150x150"
+        />
+        <img class="background-img" src="../../../assets/pics/bamboo2.jpg" />
+        <p class="name">{{ contact.name }}</p>
+        <div class="bio">
+          <p><i class="fa-solid fa-envelope"></i> {{ contact.email }}</p>
+          <hr />
+          <p><i class="fa-solid fa-cake-candles"></i> {{ contact.birthday }}</p>
+          <hr />
+          <p><i class="fa-solid fa-phone"></i> {{ contact.phones }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

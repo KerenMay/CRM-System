@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button (click)="opened = !opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button><mat-icon>home</mat-icon></button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="opened" mode="side" color="accent">
+    <mat-list>
+      <mat-list-item>
+        <a routerLink="/costumers">Costumers</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/contacts">Contacts</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <div class="container-fluid position-fixed start-0 top-0">
+  <div class="bgc-black">
+    <div class="d-flex justify-content-between">
+      <div class="symbol mt-3">crm</div>
+      <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button
+              type="button"
+              class="round mt-3 p-1"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              {{ email }}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>
+                <i class="fa-regular fa-user"></i> View Profile
+              </button>
+              <button ngbDropdownItem (click)="logout()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

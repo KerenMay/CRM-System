@@ -1,0 +1,65 @@
+<div class="col-11 m-2">
+  <form #addTheCostumer="ngForm" (ngSubmit)="addNewCostumer()">
+    <h3 class="">Add New Costumer</h3>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >First Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter First Name"
+        name="costumerFirstName"
+        [(ngModel)]="costumer.firstN"
+        #firstName="ngModel"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter Last Name"
+        name="costumerLastName"
+        [(ngModel)]="costumer.lastN"
+        #lastName="ngModel"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Phone</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter Phone NO."
+        name="costumerPhone"
+        [(ngModel)]="costumer.phone"
+        #phone="ngModel"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter Email Address"
+        name="costumerEmail"
+        [(ngModel)]="costumer.email"
+        #email="ngModel"
+        email
+      />
+    </div>
+    <button
+      [disabled]="addTheCostumer.invalid"
+      type="submit"
+      class="btn btn-success"
+    >
+      <i class="fa-solid fa-plus"></i>Add Costumer
+    </button>
+  </form>
+</div>

@@ -1,0 +1,71 @@
+<mat-toolbar style="background-color: #3700b3">
+  <mat-toolbar-row class="d-flex justify-content-between">
+    <div class="holder myClr">
+      <button class="myIcon" mat-button (click)="opened = !opened">
+        <mat-icon>menu</mat-icon> CRM
+      </button>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div ngbDropdown class="d-inline-block">
+          <button
+            type="button"
+            class="round logoutBtn myBgc"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+          >
+            {{ email }}
+          </button>
+          <div ngbDropdownMenu class="myBgc" aria-labelledby="dropdownBasic1">
+            <button class="logoutBtn" ngbDropdownItem>
+              <i class="fa-regular fa-user"></i> View Profile
+            </button>
+            <button class="logoutBtn" ngbDropdownItem (click)="logout()">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav style="background-color: #6200ee" #sidenav [(opened)]="opened" mode="side">
+    <mat-list >
+      <mat-list-item class="working">
+        <a routerLink="/costumers"
+          ><i class="fa-solid fa-users-between-lines"></i> Costumers</a
+        >
+      </mat-list-item>
+      <mat-list-item>
+        <a class="disabled"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="disabled"
+          ><i class="fa-solid fa-clock-rotate-left"></i> History</a
+        >
+      </mat-list-item>
+      <mat-list-item class="working">
+        <a routerLink="/contacts"
+          ><i class="fa-solid fa-id-card"></i> Contacts</a
+        >
+      </mat-list-item>
+      <mat-list-item>
+        <a class="disabled"><i class="fa-solid fa-briefcase"></i> Work place</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="disabled"><i class="fa-solid fa-flag"></i> Reports</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="disabled"><i class="fa-brands fa-adversal"></i> Sales</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="disabled"><i class="fa-solid fa-box-archive"></i> Archive</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-contacts></app-contacts>
+  </mat-sidenav-content>
+</mat-sidenav-container>

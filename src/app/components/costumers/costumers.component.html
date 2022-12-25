@@ -1,0 +1,144 @@
+<!-- <app-costumer-details></app-costumer-details> -->
+<!-- 
+<app-ver-navbar></app-ver-navbar>
+mt-100 ml-300
+   -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-10">
+      <button
+        class="btn myBlue col-12 text-white m-1"
+        (click)="addNewCostumer()"
+      >
+        <i class="fa-solid fa-user-plus"></i> Add New Costumer
+      </button>
+      <br />
+
+      <div class="d-flex justify-content-between col-12 m-1 mt-0">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="First Name"
+            [(ngModel)]="firstName"
+          />
+          <label for="floatingInput"><i class="fa-solid fa-magnifying-glass"></i>First name</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="First Name"
+            [(ngModel)]="lastName"
+          />
+          <label for="floatingInput"><i class="fa-solid fa-magnifying-glass"></i>Last name</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Phone"
+            [(ngModel)]="phoneOfCostumer"
+          />
+          <label for="floatingInput"><i class="fa-solid fa-magnifying-glass"></i>Phone</label>
+        </div>
+      </div>
+      <ng-container
+        *ngIf="
+          costumers
+            | filter : 'firstN' : firstName
+            | filter : 'lastN' : lastName
+            | filter : 'phone' : phoneOfCostumer as costumers
+        "
+      >
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let costumer of costumers; index as i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ costumer.firstN }}</td>
+              <td>{{ costumer.lastN }}</td>
+              <td>{{ costumer.phone }}</td>
+              <td>{{ costumer.email }}</td>
+              <td>
+                <a (click)="editCostumer(costumer)"
+                  ><i class="fa-solid fa-pen-to-square text-success"></i
+                ></a>
+                <a (click)="deleteCostumer(costumer)"
+                  ><i class="fa-solid fa-trash text-danger"></i>
+                </a>
+                <a [routerLink]="['/costumers', costumer.id]"
+                  ><i class="fa-solid fa-eye"></i
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </div>
+    <div class="col-2">
+      <div class="container d-flex flex-column">
+        <div class="row mt-3">
+          <div class="">
+            <div class="card border border-opacity-10 shadow-sm">
+              <div class="card-body">
+                <div class="float-end">
+                  <i class="fa fa-arrow-up textSpan"></i>
+                </div>
+                <h5 class="text-muted fw-normal">New costumers</h5>
+                <h3 class="m-2">17</h3>
+                <p class="mb-0 text-muted">
+                  <span class="textSpan me-1">+8</span>
+                  <span class="text-nowrap text-muted small">Yesterday</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="mt-1">
+            <div class="card border border-opacity-10 shadow-sm">
+              <div class="card-body">
+                <div class="float-end">
+                  <i class="fa fa-arrow-up textSpan"></i>
+                </div>
+                <h5 class="text-muted fw-normal">Sales</h5>
+                <h3 class="m-2">512</h3>
+                <p class="mb-0 text-muted">
+                  <span class="textSpan me-1">+60</span>
+                  <span class="text-nowrap text-muted small">Last week</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-1">
+            <div class="card border border-opacity-10 shadow-sm">
+              <div class="card-body">
+                <div class="float-end">
+                  <i class="fa fa-arrow-up textSpan"></i>
+                </div>
+                <h5 class="text-muted fw-normal">Partners</h5>
+                <h3 class="m-2">12</h3>
+                <p class="mb-0 text-muted">
+                  <span class="textSpan me-1">+2</span>
+                  <span class="text-nowrap text-muted small">This month</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

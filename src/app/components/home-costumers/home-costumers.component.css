@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
+.round {
+  border-radius: 100px;
+  border-color: #88c399;
+}
+mat-sidenav,
+.myBgc {
+  background-color: #3700b3;
+}
+.myClr {
+  color: #bb86fc;
+}
+.logoutBtn {
+  color: #bb86fc;
+  font-size: 0.7em;
+  padding: 0 25px;
+}
+.myIcon {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4em;
+}
+mat-list-item a {
+  text-decoration: none;
+  color: #bb86fc;
+  width: 100%;
+}
+
+mat-list-item:hover {
+  background-color: rgba(204, 204, 204, 0.562);
+
+  overflow: hidden;
+}
+mat-list-item a:hover {
+  position: absolute;
+  left: 40px;
+  transition: 0.2s;
+}
+.working {
+  border-bottom: #BB86FC 2px groove;
+  border-top: #BB86FC 1px groove;
+}

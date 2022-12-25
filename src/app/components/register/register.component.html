@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-6 gray">
+    <div class="container col-10 text-center">
+      <form class="mt-5" #registerForm="ngForm" (ngSubmit)="register()">
+        <h1 class="display-3"><i class="fa-solid fa-file-pen"></i> Register</h1>
+        <div class="form-floating mb-3">
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            [(ngModel)]="user.email"
+            required
+            email
+            #email="ngModel"
+          />
+          <small
+            class="text-danger"
+            *ngIf="email.invalid && (email.touched || email.dirty)"
+            >WRONG EMAIL FORMAT</small
+          >
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            [(ngModel)]="user.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+          <small
+            class="text-danger"
+            *ngIf="password.invalid && (password.touched || password.dirty)"
+          >
+            AT LEAST 6 CHARACTERS
+          </small>
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button
+          type="submit"
+          class="btn registerBtn w-100 mt-3 mb-3"
+          [disabled]="registerForm.invalid"
+        >
+          Register
+        </button>
+      </form>
+
+      <button
+        (click)="loginWithGoogle()"
+        type="submit"
+        class="btn loginColorGoogle w-100"
+      >
+        <i class="fa-brands fa-google-plus-g"></i> login with google
+      </button>
+      <div class="d-flex">
+        <p class="register btn p-0">
+          Already Has an account? <a routerLink="/login">Login Here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <img class="img-fluid" src="../../../assets/pics/reg2.png" alt="" />
+  </div>
+</div>
